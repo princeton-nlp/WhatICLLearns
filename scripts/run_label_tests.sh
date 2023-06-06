@@ -13,7 +13,6 @@ OUTPUT_FORMAT=${OUTPUT_FORMAT:-"classification"}            # output_format
 PROMPT_LEN=${PROMPT_LEN:-8}                                 # dataset
 LABEL_SPACE=${LABEL_SPACE:-}
 TEMPLATE_NUM=${TEMPLATE_NUM:-}
-COMPUTE_SUMMARY_STATS=${COMPUTE_SUMMARY_STATS:-"FALSE"}
 INDEX=${INDEX:-}                                            # Job task id
 
 cd ..
@@ -89,30 +88,14 @@ echo "Additional Args: $ADDITIONAL_ARGS"
 echo "Template Args: $TEMPLATE_ARGS"
 echo "Extra Args: $@"
 
-echo $COMPUTE_SUMMARY_STATS 
-if [ "$COMPUTE_SUMMARY_STATS" = "TRUE" ];
-then
-    echo "Computing summary stats"
-    python -m spb.compute_summary_stats -c config.ini ${MODEL}_icl \
-        --num_prompt_ex $PROMPT_LEN \
-        --datasets $DATASET \
-        --val_examples $VAL_EXAMPLES \
-        --episodes $SEED \
-        --output_format $OUTPUT_FORMAT \
-        --api_key_name $API_KEY \
-        --dc_template $TEMPLATE_NUM \
-        --dc_mode $MODE \
-        $ADDITIONAL_ARGS \
-        $@
-else
-    python -m spb.main -c config.ini ${MODEL}_icl \
-        --num_prompt_ex $PROMPT_LEN \
-        --datasets $DATASET \
-        --val_examples $VAL_EXAMPLES \
-        --episodes $SEED \
-        --output_format $OUTPUT_FORMAT \
-        --api_key_name $API_KEY \
-        $ADDITIONAL_ARGS \
-        $@
-fi
+python -m spb.main -c config.ini ${MODEL}_icl \
+    --num_prompt_ex $PROMPT_LEN \
+    --datasets $DATASET \
+    --val_examples $VAL_EXAMPLES \
+    --episodes $SEED \
+    --output_format $OUTPUT_FORMAT \
+    --api_key_name $API_KEY \
+    $ADDITIONAL_ARGS \
+    $@
+
 
