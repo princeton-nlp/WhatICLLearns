@@ -1,6 +1,6 @@
 # What In-Context Learning “Learns” In-Context: Disentangling Task Recognition and Task Learning
 
-This repository contains the code for our paper "What In-Context Learning “Learns” In-Context: Disentangling Task Recognition and Task Learning".
+This repository contains the code for our paper ["What In-Context Learning “Learns” In-Context: Disentangling Task Recognition and Task Learning"](https://arxiv.org/abs/2305.09731) (Findings of ACL 2023).
 
 # Quick Links
 * Overview
@@ -37,4 +37,15 @@ TBA
 Please email Jane (jp7224@cs.princeton.edu) with any questions or open a Github issue to report bugs.
 
 # Citation
-TBA
+If you found our paper or code useful, you can cite our work:
+
+```
+@misc{pan2023incontext,
+      title={What In-Context Learning "Learns" In-Context: Disentangling Task Recognition and Task Learning}, 
+      author={Jane Pan and Tianyu Gao and Howard Chen and Danqi Chen},
+      year={2023},
+      eprint={2305.09731},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
+}
+```
