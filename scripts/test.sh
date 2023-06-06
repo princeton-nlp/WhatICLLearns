@@ -8,7 +8,7 @@ DO_TEST="./run_label_tests.sh"
 
 VAL_EXAMPLES=1
 SUMMARY_STATS=FALSE
-API_KEY="jane"
+API_KEY=xyz # Make an environment variable named xyz_openai which holds your OpenAI API key.
 TEMPLATE_NUM=1
 
 TASKS=(
@@ -64,7 +64,3 @@ for TASK in ${TASKS[@]}; do
         done;
     done;
 done;
-
-
-            # --dc_metrics accuracy,original_accuracy \
-            # --dc_filename rebuttal_stats/${DATASET}.tsv
