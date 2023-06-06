@@ -39,13 +39,11 @@ Please email Jane (jp7224@cs.princeton.edu) with any questions or open a Github 
 # Citation
 If you found our paper or code useful, you can cite our work:
 
-```
-@misc{pan2023incontext,
-      title={What In-Context Learning "Learns" In-Context: Disentangling Task Recognition and Task Learning}, 
-      author={Jane Pan and Tianyu Gao and Howard Chen and Danqi Chen},
-      year={2023},
-      eprint={2305.09731},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL}
+```bibtex
+@inproceedings{pan2023what,
+   title={What In-Context Learning 'Learns' In-Context: Disentangling Task Recognition and Task Learning},
+   author={Pan, Jane and Gao, Tianyu and Chen, Howard and Chen, Danqi},
+   booktitle={Findings of Association for Computational Linguistics (ACL)},
+   year={2023}
 }
 ```
