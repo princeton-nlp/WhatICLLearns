@@ -30,7 +30,7 @@ pip install -r requirements.txt
 Please note that there may be variation due to different versions of packages, but the trends described in our paper should remain consistent.
 
 # Using the codebase
-TBA
+You can see some sample scripts in the subfolder `scripts`. The script `test.sh` inputs key parameters (e.g. label type, dataset, model), etc. to `run_label_tests.sh`, which calls `main.py`.
 
  
 # Contact
