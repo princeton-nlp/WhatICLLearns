@@ -2,13 +2,6 @@
 
 This repository contains the code for our paper ["What In-Context Learning “Learns” In-Context: Disentangling Task Recognition and Task Learning"](https://arxiv.org/abs/2305.09731) (Findings of ACL 2023).
 
-# Quick Links
-* Overview
-* Requirements
-* Using the codebase
-* Quick start
-* Contact
-
 # Overview
 <!-- ![image](./figure.png) -->
 <p align="center">
