@@ -27,7 +27,7 @@ You can see some sample scripts in the subfolder `scripts`. The script `test.sh`
 
  
 # Contact
-Please email Jane (jp7224@cs.princeton.edu) with any questions or open a Github issue to report bugs.
+Please email Jane (jane.pan@nyu.edu) with any questions or open a Github issue to report bugs.
 
 # Citation
 If you found our paper or code useful, you can cite our work:
