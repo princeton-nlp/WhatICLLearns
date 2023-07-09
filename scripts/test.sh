@@ -4,11 +4,9 @@
 # Testing for ICL paper.
 ##########################################################
 
-DO_TEST="./run_label_tests.sh"
-
 VAL_EXAMPLES=1
 API_KEY=xyz # Make an environment variable named xyz_openai which holds your OpenAI API key.
-TEMPLATE_NUM=1
+TEMPLATE_NUM=1 # Demonstration template number (1, 2, 3)
 
 TASKS=(
     tweet_eval_hate
@@ -43,23 +41,24 @@ KS=(
     32
 )
 
-
-for TASK in ${TASKS[@]}; do
-    for MODEL in gpt3_ada opt_125m; do
-        for MODE in ABSTRACT_LABEL RANDOM_LABEL NUMBER_LABEL ABSTRACT_LABEL LETTER_LABEL; do
-            MODEL=$MODEL \
-            VAL_EXAMPLES=1 \
-            MODE=$MODE \
-            DATASET=$TASK \
-            INDEX="0" \
-            TEMPLATE_NUM=1 \
-            PROMPT_LEN=8 \
-            API_KEY=danqi \
-            SCRATCH_DIR="/n/fs/scratch/nlp-jp7224/"\
-            COMPUTE_SUMMARY_STATS="FALSE" \
-            bash ./run_label_tests.sh \
-                --output_dir test_output \
-                $@
+for K in ${KS}; do
+    for TASK in ${TASKS[@]}; do
+        for MODEL in gpt3_ada opt_125m; do
+            for MODE in ${MODES[@]}; do
+                MODEL=$MODEL \
+                VAL_EXAMPLES=$VAL_EXAMPLES \
+                MODE=$MODE \
+                DATASET=$TASK \
+                INDEX="0" \
+                TEMPLATE_NUM=$TEMPLATE_NUM \
+                PROMPT_LEN=$K \
+                API_KEY=$API_KEY \
+                SCRATCH_DIR="/n/fs/scratch/nlp-jp7224/"\
+                COMPUTE_SUMMARY_STATS="FALSE" \
+                bash ./run_label_tests.sh \
+                    --output_dir test_output \
+                    $@
+            done;
         done;
     done;
 done;
