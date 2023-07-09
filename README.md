@@ -2,13 +2,6 @@
 
 This repository contains the code for our paper ["What In-Context Learning “Learns” In-Context: Disentangling Task Recognition and Task Learning"](https://arxiv.org/abs/2305.09731) (Findings of ACL 2023).
 
-# Quick Links
-* Overview
-* Requirements
-* Using the codebase
-* Quick start
-* Contact
-
 # Overview
 <!-- ![image](./figure.png) -->
 <p align="center">
@@ -34,7 +27,7 @@ You can see some sample scripts in the subfolder `scripts`. The script `test.sh`
 
  
 # Contact
-Please email Jane (jp7224@cs.princeton.edu) with any questions or open a Github issue to report bugs.
+Please email Jane (jane.pan@nyu.edu) with any questions or open a Github issue to report bugs.
 
 # Citation
 If you found our paper or code useful, you can cite our work:
