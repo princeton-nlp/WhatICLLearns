@@ -14,14 +14,16 @@ PROMPT_LEN=${PROMPT_LEN:-8}                                 # dataset
 LABEL_SPACE=${LABEL_SPACE:-}
 TEMPLATE_NUM=${TEMPLATE_NUM:-}
 INDEX=${INDEX:-}                                            # Job task id
+MODEL_WEIGHTS_DIR=${MODEL_WEIGHTS_DIR:-}
+
 
 cd ..
 
-# Create scratch directory if it doesn't exist
-scratch_dir=$SCRATCH_DIR
-if [ ! -d ${scratch_dir} ]; then
-    mkdir ${scratch_dir}
-fi
+# # Create scratch directory if it doesn't exist
+# scratch_dir=$SCRATCH_DIR
+# if [ ! -d ${scratch_dir} ]; then
+#     mkdir ${scratch_dir}
+# fi
 
 
 # Use Slurm Job ID?
@@ -95,6 +97,7 @@ python -m spb.main -c config.ini ${MODEL}_icl \
     --episodes $SEED \
     --output_format $OUTPUT_FORMAT \
     --api_key_name $API_KEY \
+    --model_weights_dir $MODEL_WEIGHTS_DIR \
     $ADDITIONAL_ARGS \
     $@
 

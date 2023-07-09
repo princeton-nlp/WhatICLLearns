@@ -183,8 +183,9 @@ def get_model(model_args, config, train_phase=True, model_dir=None):
         max_memory = {i: max_memory for i in range(n_gpus)}
 
         model_weights_path = model_args.model_weights_dir + model_args.model_name_or_path
-        offload_path = model_args.model_offload_dir + model_args.model_name_or_path
+        
         if os.path.exists(model_weights_path):
+            offload_path = model_args.model_offload_dir + model_args.model_name_or_path
             logging.warning(f"Loading weights from {model_weights_path}")
             model = AutoModelForCausalLM.from_pretrained(
                 model_weights_path,

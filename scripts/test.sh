@@ -7,6 +7,7 @@
 VAL_EXAMPLES=1
 API_KEY=xyz # Make an environment variable named xyz_openai which holds your OpenAI API key.
 TEMPLATE_NUM=1 # Demonstration template number (1, 2, 3)
+MODEL_WEIGHTS_DIR= # location of stored model weights for OPT/LLaMa
 
 TASKS=(
     tweet_eval_hate
@@ -53,7 +54,7 @@ for K in ${KS}; do
                 TEMPLATE_NUM=$TEMPLATE_NUM \
                 PROMPT_LEN=$K \
                 API_KEY=$API_KEY \
-                SCRATCH_DIR="/n/fs/scratch/nlp-jp7224/"\
+                MODEL_WEIGHTS_DIR=$MODEL_WEIGHTS_DIR \
                 COMPUTE_SUMMARY_STATS="FALSE" \
                 bash ./run_label_tests.sh \
                     --output_dir test_output \
